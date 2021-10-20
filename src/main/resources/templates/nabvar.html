@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Crud</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body>
+
+
+	<nav th:fragment="header"
+		class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" th:href="@{/}">Agenda del Colegio</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a th:href="@{/listarAdminSalones}"
+						class="nav-link" aria-current="page">Horarios por Salones</a></li>
+					<li class="nav-item"><a th:href="@{/listarCursos}"
+						class="nav-link">Cursos</a></li>
+					<li class="nav-item"><a th:href="@{/listarDocentes}"
+						class="nav-link">Docentes</a></li>
+					<li class="nav-item"><a th:href="@{/listarEstudiantes}"
+						class="nav-link">Estudiantes</a></li>
+					<li class="nav-item"><a th:href="@{/listarCursoEstudiante}"
+						class="nav-link">Estudiantes por Cursos</a></li>
+					<li class="nav-item"><a th:href="@{/listarSalones}"
+						class="nav-link">Salones</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+		crossorigin="anonymous"></script>
+
+</body>
+</html>

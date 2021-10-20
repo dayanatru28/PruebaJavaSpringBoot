@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Crud</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body>
+		
+	<header th:replace="nabvar::header"></header>
+
+	<div class="container mt-4">
+		<div class="col-sm-12">
+			<form th:action="@{/guardarCurso/}" th:object=${curso}
+				method="POST">
+				<div class="card">
+					<div class="card-header">
+						<h3>Modulo Cursos</h3>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<label class="text-uppercase fw-bold">Codigo</label> 
+							<input th:field="*{codigo}" type="text"	class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label class="text-uppercase fw-bold"> Nombre del curso</label> 
+							<input th:field="*{nombreCurso}" type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label class="text-uppercase fw-bold">Nombre del Docente</label> 
+							<select th:field="*{idDocente}">
+					            <option th:each="docente : ${docentes}" th:value="${docente.idDocente}" th:text="${docente.nombreDocente}" />
+					        </select>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="d-grid gap-2 col-6 mx-auto">
+							<input type="submit" value="Guardar" class="btn btn-success">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
